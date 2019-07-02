@@ -1,5 +1,32 @@
+function nicksDirReduc (arr){
+  let opposites = {"NORTH": "SOUTH", "SOUTH": "NORTH", "WEST": "EAST", "EAST": "WEST"}
+  const stack = [];
+    arr.forEach((eachThing)=>{
+      if(opposites[eachThing] === stack[0]){
+        // "SOUTH"           ==== "SOUTH"
+        stack.shift();
+      } else{
+        stack.unshift(eachThing)
+      }
+    }) 
+      return stack;
+  } 
+
+
+
+
+
+// let opposites = { "NORTH": "SOUTH", "SOUTH": "NORTH", "WEST": "EAST", "EAST": "WEST"}
+
+// console.log(opposites["NORTH"])
+
+// nicksDirReduc(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])
+
+
+
+
+
 function dirReduc(inputArray) {
-  // function theLoop(inputArray) {
   for (let i = 0; i < inputArray.length; i++) {
     currentString = inputArray[i];
     nextString = inputArray[i + 1];
@@ -12,7 +39,10 @@ function dirReduc(inputArray) {
       dirReduc(inputArray);
     }
   }
+  return inputArray
 }
+
+
 
 
 function namesSorter(departmentsArray) {
