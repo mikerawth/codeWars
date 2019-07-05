@@ -25,3 +25,24 @@ function findOdd(a) {
     if (c % 2 === 1) { return a[i] }
   }
 }
+
+// https://www.codewars.com/kata/578aa45ee9fd15ff4600090d/train/javascript
+// 910 ms
+function sortArray(array) {
+  let oddArray = []
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 == 1) {
+      oddArray.push(array[i]);
+    }
+  }
+  oddArray.sort((a, b) => a - b);
+  let oddArrayCounter = -1;
+  return sortedArray = array.map((eachNumber) => {
+    if (eachNumber % 2 == 1) {
+      oddArrayCounter++;
+      return oddArray[oddArrayCounter];
+    } else {
+      return eachNumber;
+    }
+  })
+}
