@@ -49,3 +49,31 @@ function createPhoneNumber(n) {
 //       + '-' 
 //       + numbers.substring(6);
 // }
+
+function duplicateEncode(word) {
+  let letterCheck = {};
+  word.toLowerCase().split("").forEach((eachLetter) => {
+    if (!(eachLetter in letterCheck)) {
+      letterCheck[eachLetter] = 0;
+    } else {
+      letterCheck[eachLetter] = 1;
+    }
+  })
+  return word.toLowerCase().split("").map((eachLetter) => {
+    if (letterCheck[eachLetter] === 0) {
+      return "("
+    } else {
+      return ")"
+    }
+  }).join("")
+}
+
+// function duplicateEncode(word){
+//   return word
+//     .toLowerCase()
+//     .split('')
+//     .map( function (a, i, w) {
+//       return w.indexOf(a) == w.lastIndexOf(a) ? '(' : ')'
+//     })
+//     .join('');
+// }
