@@ -1,7 +1,7 @@
 // https://www.codewars.com/kata/are-they-the-same/train/javascript
 
 function comp(array1, array2) {
-  if (array1.length == 0 || array2.length == 0) {
+  if (array1.length == null || array2.length == null) {
     return false;
   } else {
     let obj = {};
