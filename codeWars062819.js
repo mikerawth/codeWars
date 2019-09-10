@@ -1,16 +1,17 @@
-function nicksDirReduc (arr){
-  let opposites = {"NORTH": "SOUTH", "SOUTH": "NORTH", "WEST": "EAST", "EAST": "WEST"}
+function nicksDirReduc(arr) {
+  let opposites = { "NORTH": "SOUTH", "SOUTH": "NORTH", "WEST": "EAST", "EAST": "WEST" }
   const stack = [];
-    arr.forEach((eachThing)=>{
-      if(opposites[eachThing] === stack[0]){
-        // "SOUTH"           ==== "SOUTH"
-        stack.shift();
-      } else{
-        stack.unshift(eachThing)
-      }
-    }) 
-      return stack;
-  } 
+  arr.forEach((eachThing) => {
+    if (opposites[eachThing] === stack[0]) {
+      // "SOUTH"           ==== "SOUTH"
+      stack.shift();
+    } else {
+      stack.unshift(eachThing)
+    }
+  })
+
+  return stack;
+}
 
 
 
